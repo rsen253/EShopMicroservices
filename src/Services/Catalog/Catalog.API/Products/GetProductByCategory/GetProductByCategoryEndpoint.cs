@@ -1,7 +1,4 @@
 ﻿
-using Catalog.API.Products.GetProductByCategory.QueryDto;
-using Catalog.API.Products.GetProductByCategory.RequestDto;
-
 namespace Catalog.API.Products.GetProductByCategory
 {
     public class GetProductByCategoryEndpoint : ICarterModule

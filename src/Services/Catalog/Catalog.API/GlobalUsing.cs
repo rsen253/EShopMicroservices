@@ -19,5 +19,11 @@ global using Catalog.API.Products.GetProducts.RequestDto;
 global using Catalog.API.Exceptions;
 global using Catalog.API.Products.GetProductById.QueryDto;
 global using Catalog.API.Products.GetProductById.RequestDto;
+global using Catalog.API.Products.GetProductByCategory.QueryDto;
+global using Catalog.API.Products.GetProductByCategory.RequestDto;
+global using Catalog.API.Products.DeleteProduct.CommandDto;
+global using Catalog.API.Products.DeleteProduct.RequestDto;
+global using Catalog.API.Products.UpdateProduct.CommandDto;
+global using Catalog.API.Products.UpdateProduct.RequestDto;
 
 #endregion

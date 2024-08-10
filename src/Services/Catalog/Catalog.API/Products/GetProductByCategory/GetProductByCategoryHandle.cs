@@ -1,5 +1,4 @@
-﻿using Catalog.API.Products.GetProductByCategory.QueryDto;
-
+﻿
 namespace Catalog.API.Products.GetProductByCategory;
 
 public class GetProductByCategoryHandle(IDocumentSession session, ILogger<GetProductByCategoryHandle> logger)
