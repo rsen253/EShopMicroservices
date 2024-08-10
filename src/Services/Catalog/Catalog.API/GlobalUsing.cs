@@ -14,5 +14,10 @@ global using BuildingBlocks.CQRS;
 global using Catalog.API.Models;
 global using Catalog.API.Products.CreateProduct.CommandDto;
 global using Catalog.API.Products.CreateProduct.RequestDto;
+global using Catalog.API.Products.GetProducts.QueryDto;
+global using Catalog.API.Products.GetProducts.RequestDto;
+global using Catalog.API.Exceptions;
+global using Catalog.API.Products.GetProductById.QueryDto;
+global using Catalog.API.Products.GetProductById.RequestDto;
 
 #endregion

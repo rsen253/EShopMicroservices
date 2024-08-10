@@ -1,5 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-
+﻿
 namespace Catalog.API.Products.CreateProduct.CommandDto;
 
 public sealed record CreateProductCommand(string Name, List<string> Category,
