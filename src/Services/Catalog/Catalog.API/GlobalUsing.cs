@@ -11,7 +11,9 @@ global using FluentValidation;
 
 #region Application name-spaces
 
+global using BuildingBlocks.Behaviors;
 global using BuildingBlocks.CQRS;
+global using BuildingBlocks.Exceptions.Handler;
 global using Catalog.API.Models;
 global using Catalog.API.Products.CreateProduct.CommandDto;
 global using Catalog.API.Products.CreateProduct.RequestDto;
