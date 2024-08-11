@@ -1,5 +1,4 @@
-﻿using Catalog.API.Products.UpdateProduct.CommandDto;
-
+﻿
 namespace Catalog.API.Products.UpdateProduct;
 
 internal class UpdateProductHandler(IDocumentSession session, ILogger<UpdateProductHandler> logger)
@@ -11,7 +10,7 @@ internal class UpdateProductHandler(IDocumentSession session, ILogger<UpdateProd
 
         if (product is null)
         {
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException(command.Id);
         }
 
         product.Name = command.Name;
