@@ -7,6 +7,8 @@ global using MediatR;
 global using Marten;
 global using Marten.Pagination;
 global using FluentValidation;
+global using HealthChecks.UI.Client;
+global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 #endregion
 
