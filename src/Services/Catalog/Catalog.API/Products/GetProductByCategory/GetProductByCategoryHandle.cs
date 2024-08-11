@@ -1,7 +1,7 @@
 ﻿
 namespace Catalog.API.Products.GetProductByCategory;
 
-internal class GetProductByCategoryHandle(IDocumentSession session, ILogger<GetProductByCategoryHandle> logger)
+internal class GetProductByCategoryHandle(IDocumentSession session)
     : IQueryHandler<GetProductByCategoryQuery, GetProductByCategoryResult>
 {
     public async Task<GetProductByCategoryResult> Handle(GetProductByCategoryQuery query, CancellationToken cancellationToken)

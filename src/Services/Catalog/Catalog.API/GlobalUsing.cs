@@ -29,5 +29,6 @@ global using Catalog.API.Products.DeleteProduct.RequestDto;
 global using Catalog.API.Products.UpdateProduct.CommandDto;
 global using Catalog.API.Products.UpdateProduct.RequestDto;
 global using BuildingBlocks.Exceptions;
+global using Catalog.API.Data;
 
 #endregion
