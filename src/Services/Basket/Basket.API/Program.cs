@@ -17,15 +17,9 @@ builder.Services.AddMarten(options =>
     options.Connection(builder.Configuration.GetConnectionString("Database")!);
     options.Schema.For<ShoppingCart>().Identity(x => x.UserName);
 }).UseLightweightSessions();
-
-builder.Services.AddTransient<IBasketRepository, BasketRepository>();
-builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
 app.MapCarter();
-app.UseExceptionHandler(options =>
-{
-    // empty option means we are relaying on the custom exception handler 
-});
 app.Run();

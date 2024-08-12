@@ -19,14 +19,13 @@ builder.Services.AddMarten(options =>
 
 if (builder.Environment.IsDevelopment())
 {
-    builder.Services.InitializeMartenWith<CatalogInitialData>();
+    //builder.Services.InitializeMartenWith<CatalogInitialData>();
 }
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 builder.Services.AddHealthChecks()
-    .AddNpgSql(builder.Configuration.GetConnectionString("Database")!)
-    ;
+    .AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
 var app = builder.Build();
 
 // Configure the https request pipeline (UseMethod)
