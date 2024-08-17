@@ -9,6 +9,7 @@ global using Marten.Pagination;
 global using FluentValidation;
 global using HealthChecks.UI.Client;
 global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+global using Marten.Schema;
 
 #endregion
 
@@ -32,6 +33,5 @@ global using Catalog.API.Products.DeleteProduct.RequestDto;
 global using Catalog.API.Products.UpdateProduct.CommandDto;
 global using Catalog.API.Products.UpdateProduct.RequestDto;
 global using BuildingBlocks.Exceptions;
-global using Catalog.API.Data;
 
 #endregion
