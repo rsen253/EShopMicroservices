@@ -1,4 +1,6 @@
 ﻿using BuildingBlocks.Behaviors;
+using BuildingBlocks.Messaging.MassTransit;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -7,7 +9,7 @@ namespace Ordering.Application;
 public static class DependencyInjection
 {
     public static IServiceCollection AddApplicationServices
-        (this IServiceCollection services)
+        (this IServiceCollection services, IConfiguration configuration)
     {
         services.AddMediatR(config =>
         {
@@ -15,6 +17,9 @@ public static class DependencyInjection
             config.AddOpenBehavior(typeof(ValidationBahavior<,>));
             config.AddOpenBehavior(typeof(LoggingBehavior<,>));
         });
+
+        // we have including the asswmbly information, which is essential for the registering consumer classes in MassTransit
+        services.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
 
         return services;
     }

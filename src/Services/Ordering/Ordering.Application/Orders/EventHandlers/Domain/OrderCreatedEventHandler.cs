@@ -1,9 +1,15 @@
-﻿namespace Ordering.Application.Orders.EventHandlers.Domain;
-public class OrderCreatedEventHandler
+﻿using MassTransit;
+using Microsoft.Extensions.Logging;
+
+namespace Ordering.Application.Orders.EventHandlers.Domain;
+public class OrderCreatedEventHandler(IPublishEndpoint publishEndpoint, ILogger<OrderCreatedEventHandler> logger)
     : INotificationHandler<OrderCreatedEvent>
 {
-    public Task Handle(OrderCreatedEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(OrderCreatedEvent domainEvent, CancellationToken cancellationToken)
     {
-        return Task.CompletedTask;
+        logger.LogInformation("Domain Event handled: {DomainEvent}", domainEvent.GetType().Name);
+
+        var orderCreatedIntegrationEvent = domainEvent.order.ToOrderDto();
+        await publishEndpoint.Publish(orderCreatedIntegrationEvent, cancellationToken);
     }
 }

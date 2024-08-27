@@ -1,3 +1,4 @@
+using BuildingBlocks.Messaging.MassTransit;
 using Discount.Grps;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -45,6 +46,9 @@ builder.Services.Decorate<IBasketRepository, CacheBasketRepository>();
 //    var repo = provider.GetRequiredService<BasketRepository>();
 //    return new CacheBasketRepository(repo, provider.GetRequiredService<IDistributedCache>());
 //});
+
+builder.Services.AddMessageBroker(builder.Configuration);
+
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("Database")!)
